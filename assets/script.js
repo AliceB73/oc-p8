@@ -37,3 +37,13 @@ alert('droite');
 let numberOfSlides = slides.length;
 console.log(numberOfSlides);
 
+for (var i = 0; i < slides.length; i++) {
+	console.log(slides[i]);
+};
+
+for (let i = 0; i < slides.length; i++) {
+	let addP = document.createElement('p');
+	const divDots = document.querySelector('.dots');
+	divDots.appendChild(addP);
+	addP.className = "dot";
+}
