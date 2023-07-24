@@ -22,12 +22,18 @@ const arrowLeft = document.querySelector('.arrow_left');
 
 
 arrowLeft.addEventListener('click', function () {
-alert('cc gauche');
+alert('gauche');
 });
 
 
 const arrowRight = document.querySelector('.arrow_right');
 
 arrowRight.addEventListener('click', function() {
-alert('cc droit');
+alert('droite');
 });
+
+//
+
+let numberOfSlides = slides.length;
+console.log(numberOfSlides);
+
