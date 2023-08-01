@@ -54,38 +54,15 @@ function updateSliderPosition() {
 	bannerImg.querySelector(".banner-img").src = "./assets/images/slideshow/" + slides[counter]["image"];
 	bannerImg.querySelector("p").innerHTML = slides[counter]["tagLine"];
 
-
-	/*const selectedDot = document.querySelector(".id-" + [counter]);
-	selectedDot.classList.add("dot_selected");
-	const previousDot = document.querySelector(".id-" + [counter] - 1);
-	console.log(previousDot); */
-
 	const selectedDot = document.querySelectorAll('.dot');
-	//console.log(selectedDot.classList.contains("dot"));
-	//const list = document.getElementsByClassName('dot').classList;
-	//console.log(list);
-	//list.remove("dot");
-	//selectedDot.classList.add("dot_selected");
-	//selectedDot[counter].className =
 
-	//selectedDot.className = selectedDot.className.replace("dot_selected", "");
-	//selectedDot.className = "dot";
-	//selectedDot.classList.remove("dot_selected");
-	//selectedDot.classList.add("anotherclass");
-	//selectedDot[counter].classList.add("dot_selected");
-
-	/* let dots = document.getElementsByClassName('.dot');
-	console.log(dots.length);
-	for (i = 0; i < dots.length; i++) {
-		dots[i].className = dots[i].className.replace("dot_selected", "");
-	} */
-
-	/*selectedDot.className = "dot dot_selected";
-	if (selectedDot.className = "dot id-" + [counter]) {
-		selectedDot.className = "dot dot_selected";
-	} else {
-		selectedDot.className = "dot id-";
-	};*/
+	for (let index = 0; index < selectedDot.length; index++) {
+		if (index == counter) {
+			selectedDot[index].classList.add("dot_selected");
+		} else {
+			selectedDot[index].classList.remove("dot_selected");
+		};
+	};
 };
 
 arrowLeft.addEventListener('click', function () {
@@ -94,9 +71,6 @@ arrowLeft.addEventListener('click', function () {
 		counter = slides.length - 1;
 	};
 	updateSliderPosition();
-	/*
-	const selectedDot = document.querySelector(".id-" + [counter]);
-	selectedDot.className = "dot dot_selected"; */
 });
 
 arrowRight.addEventListener('click', function () {
