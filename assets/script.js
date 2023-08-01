@@ -17,7 +17,7 @@ const slides = [
 	}
 ]
 
-// Ajout des event listener des flèches
+// Ajout des event listener sur les flèches
 
 const arrowLeft = document.querySelector('.arrow_left');
 
@@ -31,28 +31,29 @@ const arrowRight = document.querySelector('.arrow_right');
 alert('droite');
 });*/
 
-// Ajout des bullet points
+// Ajout des bullet points selon la longueur du tableau slides
 
 for (let i = 0; i < slides.length; i++) {
 
-	let addP = document.createElement('p');
+	let addSpanElement = document.createElement('span');
 	const divDots = document.querySelector('.dots');
-	divDots.appendChild(addP);
+	divDots.appendChild(addSpanElement);
 
-	addP.className = "dot id-" + [i];
+	addSpanElement.className = "dot";
 };
 
 const firstDot = document.querySelector('.dot');
 firstDot.classList.add('dot_selected');
 
-// Modification de la slide au clic sur le bouton
+// Fonction permettant la modification de la slide au clic sur le bouton ainsi que
+// la modification du bullet point sélectionné
 
 let counter = 0;
 
 function updateSliderPosition() {
 	const bannerImg = document.querySelector(".banner");
 	bannerImg.querySelector(".banner-img").src = "./assets/images/slideshow/" + slides[counter]["image"];
-	bannerImg.querySelector("p").innerHTML = slides[counter]["tagLine"];
+	bannerImg.querySelector("h1").innerHTML = slides[counter]["tagLine"];
 
 	const selectedDot = document.querySelectorAll('.dot');
 
@@ -65,6 +66,7 @@ function updateSliderPosition() {
 	};
 };
 
+// On crée un event listener sur les flèches qui appelle la fonction lorsque l'on clique dessus
 arrowLeft.addEventListener('click', function () {
 	counter--;
 	if (counter < 0) {
